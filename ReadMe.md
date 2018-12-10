@@ -16,6 +16,12 @@ visudo
 Added the line grader ALL=(ALL:ALL) ALL
 ~~~
 
+Additionally a file 'grader' is added in /etc/sudoers.d/grader with the below content
+
+~~~
+grader  ALL=(ALL) NOPASSWD:ALL
+~~~
+
 ## SSH Key-pair
 
 Generated keys on local machine using ssh-keygen
@@ -51,6 +57,13 @@ All the packages were updated by executing below step
 ~~~
 sudo apt-get update
 sudo apt-get upgrade
+~~~
+
+Enabled auto-install of the packages updates. 
+
+~~~
+sudo apt-get install unattended-upgrades
+sudo dpkg-reconfigure -plow unattended-upgrades
 ~~~
 
 ## SSH port modification
